@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Banner } from '@/components/Banner';
 import Features from '@/components/Feature';
 import { Navbar } from '@/components/navbar';
+import Testimonials from '@/components/Testimonial';
 
 export default function HomePage() {
   const [opened, { toggle }] = useDisclosure();
@@ -37,6 +38,7 @@ export default function HomePage() {
       <AppShell.Main>
         <Banner />
         <Features />
+        <Testimonials />
       </AppShell.Main>
     </AppShell>
   );
