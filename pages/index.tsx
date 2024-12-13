@@ -1,6 +1,7 @@
 import { AppShell, Button, rem, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Banner } from '@/components/Banner';
+import FAQ from '@/components/faq';
 import Features from '@/components/Feature';
 import { Navbar } from '@/components/navbar';
 import Testimonials from '@/components/Testimonial';
@@ -39,6 +40,7 @@ export default function HomePage() {
         <Banner />
         <Features />
         <Testimonials />
+        <FAQ />
       </AppShell.Main>
     </AppShell>
   );
