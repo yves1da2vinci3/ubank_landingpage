@@ -1,0 +1,129 @@
+.featuresSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuresHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(transparent 50%, var(--mantine-color-blue-1) 50%);
+}
+
+.headerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.headerContent p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 400px;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #000;
+  border-radius: 2rem;
+  background: transparent;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.featureCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.featureCard {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.featureDescription {
+  color: #666;
+  line-height: 1.6;
+}
+
+.virtualCardFeature {
+  background: #1c2a2c;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+}
+
+.virtualCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.virtualCardIcon {
+  width: 48px;
+  height: 48px;
+  background: #a3e635;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.virtualCardButton {
+  background: #a3e635;
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .featuresHeader {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .featureCards {
+    grid-template-columns: 1fr;
+  }
+}
