@@ -1,0 +1,84 @@
+.cardContainer {
+  background-color: var(--mantine-color-darkestBlue);
+  padding: calc(var(--mantine-spacing-xl) * 2);
+  border-radius: var(--mantine-radius-lg);
+  margin: var(--mantine-spacing-xl) 0;
+}
+
+.cardWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: calc(var(--mantine-spacing-xl) * 2);
+  align-items: center;
+}
+
+.cardPreview {
+  flex: 1;
+  background: linear-gradient(45deg, #3072f2, #051c49);
+  padding: var(--mantine-spacing-xl);
+  border-radius: var(--mantine-radius-md);
+  color: var(--mantine-color-white);
+  position: relative;
+  min-width: 320px;
+}
+
+.cardLogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.cardNumber {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: var(--mantine-spacing-xl) 0;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: var(--mantine-spacing-xl);
+}
+
+.cardDetails {
+  flex: 1;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+  margin-bottom: var(--mantine-spacing-lg);
+}
+
+.stars {
+  color: var(--mantine-color-yellow);
+}
+
+.actionButtons {
+  display: flex;
+  gap: var(--mantine-spacing-md);
+  margin-top: var(--mantine-spacing-xl);
+}
+
+.button {
+  flex: 1;
+  background-color: var(--mantine-color-ligthBlue);
+}
+
+@media (max-width: $mantine-breakpoint-md) {
+  .cardWrapper {
+    flex-direction: column;
+  }
+
+  .cardPreview {
+    width: 100%;
+  }
+
+  .cardDetails {
+    width: 100%;
+  }
+}
