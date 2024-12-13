@@ -119,10 +119,10 @@ export default function Testimonials() {
 
   return (
     <Container size="lg" py={{ base: 'xl', md: '2xl' }} className={classes.testimonialContainer}>
-      <Stack spacing={{ base: 'xl', md: '2xl' }}>
-        <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
-          <Group position="apart" align="flex-start">
-            <div style={{ maxWidth: '600px' }}>
+      <Stack gap="xl" style={{ width: '100%' }}>
+        <div style={{ textAlign: isMobile ? 'center' : 'left', width: '100%' }}>
+          <Group justify="space-between" align="flex-start" style={{ width: '100%' }}>
+            <div style={{ maxWidth: isMobile ? '100%' : '600px' }}>
               <Title order={1} size="h1" fw={600}>
                 Ce que nos clients disent de nous
               </Title>
@@ -139,21 +139,37 @@ export default function Testimonials() {
           </Group>
         </div>
 
-        <Group grow align="stretch" style={{ flexDirection: isMobile ? 'column' : 'row' }}>
-          {testimonials.slice(0, 2).map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
-        </Group>
+        <Stack gap="md" style={{ width: '100%' }}>
+          <Group
+            grow
+            style={{ gap: isMobile ? 'md' : 'lg', flexDirection: isMobile ? 'column' : 'row' }}
+          >
+            {testimonials.slice(0, 2).map((testimonial, index) => (
+              <TestimonialCard key={index} {...testimonial} />
+            ))}
+          </Group>
+        </Stack>
 
-        <Group grow align="stretch" style={{ flexDirection: isMobile ? 'column' : 'row' }}>
-          <VideoTestimonial />
-          <Stack spacing="md">
+        <Group
+          grow
+          style={{
+            gap: isMobile ? 'md' : 'lg',
+            flexDirection: isMobile ? 'column' : 'row',
+            width: '100%',
+          }}
+        >
+          <div style={{ width: isMobile ? '100%' : 'auto' }}>
+            <VideoTestimonial />
+          </div>
+          <Stack
+            style={{ width: isMobile ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}
+            gap="md"
+          >
             {testimonials.slice(2, 4).map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
           </Stack>
         </Group>
-
         {isMobile && (
           <Button variant="outline" radius="md" fullWidth>
             Voir plus de témoignages

@@ -1,12 +1,14 @@
 .testimonialContainer {
   background-color: var(--mantine-color-gray-0);
   padding: var(--mantine-spacing-md);
+  width: 100%;
 }
 
 .videoCard {
   transition: transform 0.2s ease;
   cursor: pointer;
   height: 100%;
+  width: 100%;
 }
 
 .videoCard:hover {
@@ -35,6 +37,7 @@
   transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .testimonialCard:hover {
@@ -48,10 +51,14 @@
 
   .testimonialCard {
     margin-bottom: var(--mantine-spacing-md);
+    min-width: 100%;
+    flex: 1 1 100% !important;
   }
 
   .videoCard {
     margin-bottom: var(--mantine-spacing-md);
+    min-width: 100%;
+    flex: 1 1 100% !important;
   }
 }
 
