@@ -4,6 +4,7 @@ import { Banner } from '@/components/Banner';
 import FAQ from '@/components/faq';
 import Features from '@/components/Feature';
 import { Navbar } from '@/components/navbar';
+import { Newsletter } from '@/components/Newletter';
 import Testimonials from '@/components/Testimonial';
 
 export default function HomePage() {
@@ -41,6 +42,7 @@ export default function HomePage() {
         <Features />
         <Testimonials />
         <FAQ />
+        <Newsletter />
       </AppShell.Main>
     </AppShell>
   );

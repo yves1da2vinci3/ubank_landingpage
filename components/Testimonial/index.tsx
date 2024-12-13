@@ -132,7 +132,7 @@ export default function Testimonials() {
               </Text>
             </div>
             {!isMobile && (
-              <Button variant="outline" radius="md">
+              <Button variant="outline" radius="xl">
                 Voir plus de témoignages
               </Button>
             )}
