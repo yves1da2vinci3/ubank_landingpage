@@ -1,5 +1,6 @@
-import { AppShell, Button, Stack } from '@mantine/core';
+import { AppShell, Button, rem, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { Banner } from '@/components/Banner';
 import { Navbar } from '@/components/navbar';
 
 export default function HomePage() {
@@ -10,11 +11,11 @@ export default function HomePage() {
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
       padding="md"
     >
-      <AppShell.Header>
+      <AppShell.Header style={{ alignItems: 'center', paddingTop: rem(5) }}>
         <Navbar opened={opened} setOpened={toggle} />
       </AppShell.Header>
 
-      <AppShell.Navbar hidden={opened} p="md">
+      <AppShell.Navbar hidden={opened}>
         <Stack px="md">
           <Button variant="subtle" color="dark">
             Home
@@ -32,7 +33,9 @@ export default function HomePage() {
         </Stack>
       </AppShell.Navbar>
 
-      <AppShell.Main>Main</AppShell.Main>
+      <AppShell.Main>
+        <Banner />
+      </AppShell.Main>
     </AppShell>
   );
 }
