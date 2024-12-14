@@ -3,7 +3,6 @@ import {
   IconBell,
   IconCategory,
   IconChartPie,
-  IconCurrencyDollar,
   IconInfinity,
   IconRepeat,
   IconRobot,
@@ -44,7 +43,7 @@ const FeatureCard = ({
   if (variant === 'highlight') {
     return (
       <Card
-        ref={ref}
+        ref={ref as React.RefObject<HTMLDivElement>}
         padding="xl"
         radius="md"
         bg="dark.7"
@@ -88,7 +87,7 @@ const FeatureCard = ({
 
   return (
     <Card
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       shadow="sm"
       padding="xl"
       radius="md"
@@ -116,7 +115,21 @@ const FeatureCard = ({
   );
 };
 
-const features = [
+const features: FeatureCardProps[] = [
+  {
+    title: 'Assistant IA',
+    description:
+      'Bénéficiez des conseils personnalisés de notre assistant IA pour optimiser votre gestion financière et prendre de meilleures décisions.',
+    icon: <IconRobot size={28} />,
+    variant: 'highlight' as const,
+  },
+  {
+    title: 'Abonnements',
+    description:
+      'Suivez et gérez vos abonnements récurrents avec des options flexibles de planification.',
+    icon: <IconRepeat size={28} />,
+    color: 'grape',
+  },
   {
     title: 'Gestion des Transactions',
     description:
@@ -145,27 +158,6 @@ const features = [
     icon: <IconBell size={28} />,
     color: 'orange',
   },
-  {
-    title: 'Multi-Devises',
-    description:
-      'Gérez vos finances dans différentes devises et effectuez des transferts entre portefeuilles.',
-    icon: <IconCurrencyDollar size={28} />,
-    color: 'cyan',
-  },
-  {
-    title: 'Assistant IA',
-    description:
-      'Bénéficiez des conseils personnalisés de notre assistant IA pour optimiser votre gestion financière et prendre de meilleures décisions.',
-    icon: <IconRobot size={28} />,
-    variant: 'highlight',
-  },
-  {
-    title: 'Abonnements',
-    description:
-      'Suivez et gérez vos abonnements récurrents avec des options flexibles de planification.',
-    icon: <IconRepeat size={28} />,
-    color: 'grape',
-  },
 ];
 
 function Features() {
@@ -177,7 +169,7 @@ function Features() {
           Fonctionnalités
           <br />
           Complètes{' '}
-          <Text span inherit display="inline-flex" align="center">
+          <Text span inherit display="inline-flex" ta="center">
             <ThemeIcon
               size={48}
               radius="xl"

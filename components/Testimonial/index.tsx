@@ -23,7 +23,7 @@ interface TestimonialProps {
   isVideo?: boolean;
 }
 
-const TestimonialCard = ({ rating, content, name, position, image, isVideo }: TestimonialProps) => (
+const TestimonialCard = ({ rating, content, name, position, image }: TestimonialProps) => (
   <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.testimonialCard}>
     <Stack>
       <Rating value={rating} readOnly color="yellow" />
@@ -45,32 +45,51 @@ const TestimonialCard = ({ rating, content, name, position, image, isVideo }: Te
 
 const VideoTestimonial = () => {
   const theme = useMantineTheme();
+  const isMobile = useMediaQuery('(max-width: 48em)');
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.videoCard}>
-      <Stack align="center" justify="center" h="100%">
+    <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.testimonialCard}>
+      <Stack gap="lg">
         <div
           style={{
             position: 'relative',
             width: '100%',
-            height: '300px',
-            backgroundColor: theme.colors.blue[6],
+            height: isMobile ? '200px' : '240px',
+            backgroundColor: theme.colors.gray[1],
             borderRadius: theme.radius.md,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
           }}
         >
-          <div className={classes.playButton}>
-            <IconPlayerPlay size={32} />
+          <div
+            style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: theme.white,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: theme.shadows.sm,
+            }}
+          >
+            <IconPlayerPlay size={24} color={theme.colors.blue[6]} />
           </div>
         </div>
+
         <Group>
           <Avatar radius="xl" size="md" src="/path-to-peter-image.jpg" />
           <div>
             <Text fw={500}>Peter Lucious</Text>
             <Text size="sm" c="dimmed">
               CFO at TechFin Solutions
+            </Text>
+            <Text size="sm" mt="xs" c="dimmed">
+              "L'IA financière a transformé la façon dont nous gérons nos investissements. Une
+              innovation remarquable."
             </Text>
           </div>
         </Group>
@@ -140,6 +159,7 @@ export default function Testimonials() {
         </div>
 
         <Stack gap="md" style={{ width: '100%' }}>
+          {/* First group */}
           <Group
             grow
             style={{ gap: isMobile ? 'md' : 'lg', flexDirection: isMobile ? 'column' : 'row' }}
@@ -148,30 +168,34 @@ export default function Testimonials() {
               <TestimonialCard key={index} {...testimonial} />
             ))}
           </Group>
+          {/* Second group */}
+          <Group
+            grow
+            style={{
+              gap: isMobile ? 'md' : 'lg',
+              flexDirection: isMobile ? 'column' : 'row',
+              width: '100%',
+            }}
+          >
+            {!isMobile && <VideoTestimonial />}
+            <Stack
+              style={{
+                width: isMobile ? '100%' : 'auto',
+                flex: 1,
+                padding: '0 10px',
+              }}
+              gap="md"
+            >
+              {testimonials.slice(2, 4).map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </Stack>
+          </Group>
+          {isMobile && <VideoTestimonial />}
         </Stack>
 
-        <Group
-          grow
-          style={{
-            gap: isMobile ? 'md' : 'lg',
-            flexDirection: isMobile ? 'column' : 'row',
-            width: '100%',
-          }}
-        >
-          <div style={{ width: isMobile ? '100%' : 'auto' }}>
-            <VideoTestimonial />
-          </div>
-          <Stack
-            style={{ width: isMobile ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}
-            gap="md"
-          >
-            {testimonials.slice(2, 4).map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
-          </Stack>
-        </Group>
         {isMobile && (
-          <Button variant="outline" radius="md" fullWidth>
+          <Button variant="outline" radius="xl" fullWidth>
             Voir plus de témoignages
           </Button>
         )}
