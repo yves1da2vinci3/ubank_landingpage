@@ -19,7 +19,7 @@
 .title {
   color: var(--mantine-color-darkestBlue);
   font-family:
-    Greycliff CF,
+    "Greycliff CF",
     var(--mantine-font-family);
   font-size: 44px;
   line-height: 1.2;

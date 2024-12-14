@@ -55,7 +55,7 @@
 
 .description {
   font-size: 1.1rem;
-  color: #ffffff99;
+  color: #fff9;
   margin-bottom: 2rem;
 }
 
@@ -89,6 +89,6 @@
 }
 
 .button:hover {
-  background-color: #0099dd;
+  background-color: #09d;
   transform: translateY(-2px);
 }
