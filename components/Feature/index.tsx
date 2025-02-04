@@ -4,6 +4,7 @@ import {
   IconCategory,
   IconChartPie,
   IconInfinity,
+  IconLanguage,
   IconRepeat,
   IconRobot,
   IconTarget,
@@ -122,6 +123,13 @@ const features: FeatureCardProps[] = [
       'Bénéficiez des conseils personnalisés de notre assistant IA pour optimiser votre gestion financière et prendre de meilleures décisions.',
     icon: <IconRobot size={28} />,
     variant: 'highlight' as const,
+  },
+  {
+    title: 'Multilingue',
+    description:
+      "Profitez de l'application dans votre langue préférée avec notre support multilingue complet (Français, Anglais, Espagnol).",
+    icon: <IconLanguage size={28} />,
+    color: 'cyan',
   },
   {
     title: 'Abonnements',
